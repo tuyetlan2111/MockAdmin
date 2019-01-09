@@ -1,7 +1,20 @@
+.header i{
+    color: #ffffff;
+    float: right;
+    font-size: 19px;
+    margin-top: 16px;
+    margin-right: 20px;
+}
 .menu{
-    background: #F8F9FA;
-    padding: 0px;
+    background: #464647 !important;
     float: left;
+    height: 700px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    padding: 100px 0px;
 }
 .search{
     margin: 20px;
@@ -11,5 +24,60 @@ ul{
 }
 .header{
     height: 50px;
-    background: #cac3c3;
+    background: #464647 !important;
+}
+.menu li{
+    list-style: none;
+    padding: 10px 0px 10px 0px;
+}
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    background: none !important;
+    padding:10px 0px 0px 30px;
+
+}
+.menu ul li ul{
+    transition: 0.2s all;
+}
+.menu ul li ul{
+    display: none;
+    padding-top: 12px;
+}
+.menu ul li:hover ul{
+    display: block;
+}
+.menu ul li:hover ul{
+    display: block;
+}
+nav{
+    padding: 0px;
+}
+.menu ul{
+    width: 100% !important;
+    padding: 0px;
+}
+.menu ul li{
+    width: 100%;
+}
+.menu ul li.dropdown{
+    border-bottom: 1px solid #989090;
+    padding-bottom: 0px;
+}
+.menu ul li:hover{
+   background: #575757;
+   color: #F36A5A;
+   border: none;
+}
+.menu ul li ul li a{
+    padding-left: 38px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.menu ul li ul li:hover{
+    background: #000 !important;
+
+}
+.menu a.nav-link{
+    padding-bottom: 17px;
 }

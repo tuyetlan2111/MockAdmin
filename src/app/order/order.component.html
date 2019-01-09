@@ -1,4 +1,4 @@
-<div class="col-9 show_order">
+<div class="col-10 show_order">
     <h3>Danh sách hóa đơn</h3>
       <table #dataTable style="width:100%" class="table table-hover display">
         <thead>
@@ -8,8 +8,10 @@
                 <th>Ngày</th>
                 <th>Tổng giá</th>
                 <th>Order Number</th>
+                <th>ItemCount</th>
                 <th>Xóa</th>
                 <th>Sửa</th>
+                <th>Chi tiết</th>
             </tr>
         </thead>
         <tbody>
@@ -17,10 +19,12 @@
                 <td>1</td>
                 <td>System Architect</td>
                 <td>61.000</td>
+                <td>61.000</td>
                 <td>System Architect</td>
                 <td>System Architect</td>
                 <td><i class="far fa-trash-alt"></i></td>
-               <td><a routerLink=""><i class="fas fa-marker"></i></a></td>
+               <td><i class="fas fa-marker"></i></td>
+               <td><a routerLink="/order_detail">Chi tiết</a></td>
             </tr>
         </tbody>
     </table>

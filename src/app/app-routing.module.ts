@@ -6,6 +6,7 @@ import { UserComponent } from 'src/app/user/user.component';
 import { AddUserComponent } from 'src/app/add-user/add-user.component';
 import { UpdateProductComponent } from 'src/app/update-product/update-product.component';
 import { OrderComponent } from 'src/app/order/order.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 const routes: Routes = [
   { path: '',redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'add_user', component: AddUserComponent },
   { path: 'update_product', component: UpdateProductComponent },
   { path: 'order', component: OrderComponent },
+  { path: 'order_detail', component: OrderDetailComponent },
 ];
 
 @NgModule({

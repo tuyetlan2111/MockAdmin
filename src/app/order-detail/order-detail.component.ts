@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+declare var $: any;
+declare var jQuery: any;
 
 @Component({
   selector: 'app-order-detail',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderDetailComponent implements OnInit {
 
+  @ViewChild('dataTable') table;
+  dataTable: any;
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+     this.dataTable = $(this.table.nativeElement);
+    this.dataTable.DataTable();
   }
 
 }
