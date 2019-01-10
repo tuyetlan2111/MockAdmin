@@ -1,32 +1,41 @@
+
+<app-menu></app-menu>
 <div class="col-9 update_product">
-    <h3>Sửa sản phẩm</h3>
-    <div class="form-group">
-      <label for="name">Tên sản phẩm</label>
-      <input type="text" class="form-control" id="nameproduct" name="nameproduct">
-    </div>
-    <div class="form-group">
-      <label for="name">Loại sản phẩm</label>
-        <select class="form-control" id="sel1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
+  <form action="">
+      <h3>Sửa sản phẩm</h3>
+      <div class="form-group">
+        <label for="name">Tên sản phẩm</label>
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="ProductData.title" >
       </div>
-    <div class="form-group">
-      <label for="name">Giá sản phẩm</label>
-      <input type="text" class="form-control" id="priceproduct" name="priceproduct">
-    </div>
-    <div class="form-group">
-        <label for="name">Thông tin sản phẩm</label>
-      <textarea name="descreption" id="descreption" cols="30" rows="10"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="fileupload">Hình sản phẩm</label> 
-      <input type="file" name="fileupload" value="fileupload" id="fileupload">
-    </div>
+      <!-- <div class="form-group">
+        <label for="name">Loại sản phẩm</label>
+          <select class="form-control" id="sel1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div> -->
+      <div class="form-group">
+        <label for="name">Giá sản phẩm</label>
+        <input type="text" class="form-control" id="price" name="price" [(ngModel)]="ProductData.price" style="margin-left: 33px;">
+      </div>
+      <div class="form-group">
+          <label for="name">Mô tả sản phẩm</label>
+        <textarea name="descreption" id="descreption" cols="30" rows="10" [(ngModel)]="ProductData.description"></textarea>
+      </div>
+      <div class="form-group">
+          <label for="fileupload">Hình sản phẩm</label> 
+          <!-- <input type="hidden" name="fileHidden" formControlName="avatar">   -->
+          <input name="image" type="file">
+      </div>
+  
+  
+     <a routerLink="/home">
+      <button type="button" class="btn btn-success">Cập nhật</button>
+    </a>
 
-
-    <button type="button" class="btn btn-success">Cập nhật</button>
+  </form>
+   
   </div>
   

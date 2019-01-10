@@ -1,4 +1,5 @@
-<div class="col-9 show_user">
+<app-menu></app-menu>
+<div class="col-10 show_user">
     <h3>Danh sách khách hàng</h3>
       <table #dataTable style="width:100%" class="table table-hover display">
         <thead>
@@ -14,25 +15,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>System Architect</td>
-                <td>61.000</td>
-                <td>System Architect</td>
-                <td>System Architect</td>
-                <td>61.000</td>
-                <td>System Architect</td>
-                <td>System Architect</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>System Architect</td>
-                <td>61.000</td>
-                <td>System Architect</td>
-                <td>System Architect</td>
-                <td>61.000</td>
-                <td>System Architect</td>
-                <td>System Architect</td>
+            <tr *ngFor="let user of UserData">
+                <td>{{user.first_name}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.first_name}}</td>
             </tr>
            
         </tbody>

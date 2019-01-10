@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RestService } from '../rest.service';
 declare var $: any;
 declare var jQuery: any;
 
@@ -9,13 +11,19 @@ declare var jQuery: any;
 })
 export class UserComponent implements OnInit {
 
-  @ViewChild('dataTable') table;
-  dataTable: any;
-  constructor() { }
+  UserData:any = [];
+  constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit(): void {
-     this.dataTable = $(this.table.nativeElement);
-    this.dataTable.DataTable();
+  ngOnInit() {
+    this.getUser();
   }
-
+  getUser() {
+    this.UserData = [];
+    this.rest.getUser().subscribe((data: {}) => {
+      this.UserData = data;
+      console.log(data);
+      
+    });
+  }
 }
+

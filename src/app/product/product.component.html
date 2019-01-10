@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="col-10 show_product">
   <h3>Danh sách sản phẩm</h3>
     <table #dataTable style="width:100%" class="table table-hover display">
@@ -5,25 +6,27 @@
           <tr>
               <th>#ID</th>
               <th>Tên sản phẩm</th>
-              <th>Giá sản phẩm</th>
+              <th>Giá</th>
               <th>Mô tả</th>
               <th>Hình</th>
+              <th>Đánh giá</th>
               <th>Xóa</th>
               <th>Sửa</th>
           </tr>
       </thead>
       <tbody>
-          <tr>
-              <td>1</td>
-              <td>System Architect</td>
-              <td>61.000</td>
-              <td>System Architect</td>
-              <td>System Architect</td>
+          <tr *ngFor="let p of product" let i=index;>
+              <td>{{p.id}}</td>
+              <td>{{p.title}}</td>
+              <td>{{p.price}}</td>
+              <td>{{p.description}}</td>
+              <td><img src="{{p.image}}"></td>
+              <th>{{p.avgStars}}</th>
               <td><i class="far fa-trash-alt"></i> Xóa</td>
-             <td><a routerLink="/update_product"><i class="fas fa-marker"></i> Sửa</a></td>
+             <td (click)="updateProduct(p.id)"><a routerLink="/update_product/{{p.id}}"><i class="fas fa-marker"></i> Sửa</a></td>
           </tr>
          
       </tbody>
   </table>
 
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script> -->
