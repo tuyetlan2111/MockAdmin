@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RestService } from '../rest.service';
 
@@ -16,14 +16,18 @@ export class ProductComponent implements OnInit {
   product:any = [];
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
 
+  @ViewChild('dataTable') table;
+  dataTable: any;
   ngOnInit() {
     this.getProducts();
+    this.dataTable = $(this.table.nativeElement);
+    this.dataTable.DataTable();
   }
 
   getProducts() {
     this.product = [];
     this.rest.getProducts().subscribe((data: {}) => {
-      console.log(data);
+      // console.log(data);
       this.product = data;
     });
   }

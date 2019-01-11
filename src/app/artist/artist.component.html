@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+<div class="col-10 artist">
+  <a routerLink="/add_artist"><button type="button">Thêm Artist</button></a>
+  <h3>Danh sách Artist</h3>
+    <table #dataTable style="width:100%" class="table table-hover display">
+      <thead>
+          <tr>
+              <th>#ID</th>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>LifeSpan</th>
+              <th>Description</th>
+               <th>Country</th>
+              <th>TotalProducts</th>
+              <th>Xóa</th>
+              <th>Sửa</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let artist of artist" let i=index;>
+              <td>{{artist.id}}</td>
+              <td>{{artist.firstName}}</td>
+              <td>{{artist.lastName}}</td>
+              <td>{{artist.lifeSpan}}</td>
+              <td>{{artist.description}}</td>
+              <th>{{artist.country}}</th>
+              <th>{{artist.totalProducts}}</th>
+              <td><i class="far fa-trash-alt"></i> Xóa</td>
+             <td><i class="fas fa-marker"></i> Sửa</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+ <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"> -->

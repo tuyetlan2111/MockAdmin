@@ -7,11 +7,15 @@
               <th>#ID</th>
               <th>Tên sản phẩm</th>
               <th>Giá</th>
-              <th>Mô tả</th>
+              <th style="width: 343px;">Mô tả</th>
               <th>Hình</th>
+                <th>Artist</th>
+                <th>QuantitySold</th>
               <th>Đánh giá</th>
               <th>Xóa</th>
               <th>Sửa</th>
+
+              quantitySold
           </tr>
       </thead>
       <tbody>
@@ -21,9 +25,11 @@
               <td>{{p.price}}</td>
               <td>{{p.description}}</td>
               <td><img src="{{p.image}}"></td>
+              <th>{{p.artist.country}}</th>
+              <th>{{p.quantitySold}}</th>
               <th>{{p.avgStars}}</th>
               <td><i class="far fa-trash-alt"></i> Xóa</td>
-             <td (click)="updateProduct(p.id)"><a routerLink="/update_product/{{p.id}}"><i class="fas fa-marker"></i> Sửa</a></td>
+             <td (click)="updateProduct()"><a routerLink="/update_product/{{p.id}}"><i class="fas fa-marker"></i> Sửa</a></td>
           </tr>
          
       </tbody>

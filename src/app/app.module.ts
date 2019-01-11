@@ -11,13 +11,12 @@ import { AddProductComponent } from './add-product/add-product.component';
 import * as $ from "jquery";
 import { HttpClientModule} from '@angular/common/http';
 import { UserComponent } from './user/user.component';
-import { AddUserComponent } from './add-user/add-user.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { OrderComponent } from './order/order.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
-import { AddOrderComponent } from './add-order/add-order.component';
-import { HomeComponent } from './home/home.component';
 import { LoginSignComponent } from './login-sign/login-sign.component';
+import { ArtistComponent } from './artist/artist.component';
+import { AddArtistComponent } from './add-artist/add-artist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +24,12 @@ import { LoginSignComponent } from './login-sign/login-sign.component';
     ProductComponent,
     AddProductComponent,
     UserComponent,
-    AddUserComponent,
     UpdateProductComponent,
     OrderComponent,
     OrderDetailComponent,
-    AddOrderComponent,
-    HomeComponent,
     LoginSignComponent,
+    ArtistComponent,
+    AddArtistComponent,
   ],
   imports: [
     BrowserModule,

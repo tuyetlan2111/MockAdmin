@@ -3,28 +3,45 @@
   <h3>Thêm sản phẩm</h3>
   <div class="form-group">
     <label for="name">Tên sản phẩm</label>
-    <input type="text" class="form-control" id="nameproduct" placeholder="Nhập sản phẩm" name="nameproduct">
+    <input type="text" class="form-control" id="title" placeholder="Nhập sản phẩm" name="title" [(ngModel)]="ProductData.title">
   </div>
-  <div class="form-group">
-    <label for="name">Loại sản phẩm</label>
+  <!-- <div class="form-group">
+    <label for="name">Artist</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let artist of ProductData">{{artist.price}}</option>
       </select>
-    </div>
+    </div> -->
   <div class="form-group">
     <label for="name">Giá sản phẩm</label>
-    <input type="text" class="form-control" id="priceproduct" placeholder="Nhập giá sản phẩm" name="priceproduct" style="margin-left: 33px;">
+    <input type="text" class="form-control" id="price" placeholder="Nhập giá sản phẩm" name="price" style="margin-left: 33px;" [(ngModel)]="ProductData.price">
+  </div>
+  
+  <!-- <div class="form-group">
+      <label for="name">Artist</label>
+      <input type="text" class="form-control" id="artist" placeholder="Nhập artist" name="artist" style="margin-left: 93px;" [(ngModel)]="ProductData.artist.country">
+    </div> -->
+
+  <div class="form-group">
+    <label for="name">Mô tả sản phẩm</label>
+  <textarea name="descreption" id="descreption" cols="30" rows="10" style="margin-left: 14px;" [(ngModel)]="ProductData.description"></textarea>
   </div>
   <div class="form-group">
-      <label for="name">Mô tả sản phẩm</label>
-    <textarea name="descreption" id="descreption" cols="30" rows="10" style="margin-left: 14px;"></textarea>
-  </div>
-  <div class="form-group">
-      <label for="fileupload">Chọn hình sản phẩm</label> 
+    <label for="fileupload">Chọn hình sản phẩm</label> 
     <input type="file" name="fileupload" value="fileupload" id="fileupload">
   </div>
-  <button type="submit">Thêm</button>
+ <a routerLink="/add_product"><button class="add" type="submit" (click)="addProduct()">Thêm</button></a> 
 </div>
+
+
+<!-- <div class="form-group artist">
+    <button for="name" (click)="OpenArtist()">Thêm Artist</button> 
+    <div *ngIf="show">
+      <h3></h3>
+      <input type="text" class="form-control" name="firstName" placeholder="Nhập First Name">
+      <input type="text" class="form-control" name="lastName" placeholder="Nhập Last Name">
+      <input type="text" class="form-control" name="lifeSpan" placeholder="Nhập lifeSpan">
+      <input type="text" class="form-control" name="country"  placeholder="Nhập Country">
+      <input type="text" class="form-control" name="description_artist" placeholder="Nhập mô tả">
+      <input type="text" class="form-control" name="totalProducts" placeholder="Nhập số lượng sản phẩm">
+    </div>
+</div> -->

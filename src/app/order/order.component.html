@@ -16,8 +16,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
+            <tr *ngFor="let order of OrderData">
+                <td>{{order.user_id}}</td>
                 <td>System Architect</td>
                 <td>61.000</td>
                 <td>61.000</td>

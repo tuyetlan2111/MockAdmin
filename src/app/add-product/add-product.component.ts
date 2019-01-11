@@ -10,6 +10,8 @@ import { RestService } from '../rest.service';
 export class AddProductComponent implements OnInit {
 
   ProductData:any = [];
+  public show:boolean = false;
+
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -17,11 +19,14 @@ export class AddProductComponent implements OnInit {
   
   addProduct() {
     this.rest.addProduct(this.ProductData).subscribe((result) => {
-      this.router.navigate(['/add/'+result._id]);
+      this.router.navigate(['/add/'+result.id]);
     }, (err) => {
       console.log(err);
     });
   }
-
+  
+  OpenArtist(){
+    this.show = !this.show;
+  }
 
 }

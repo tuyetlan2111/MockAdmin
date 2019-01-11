@@ -47,7 +47,7 @@ export class RestService {
   
   addProduct (product): Observable<any> {
     console.log(product);
-    return this.http.post<any>(endpoint + 'product', JSON.stringify(product), httpOptions).pipe(
+    return this.http.post<any>(endpoint + 'product/ProductData', JSON.stringify(product), httpOptions).pipe(
       tap((product) => console.log(`added product w/ id=${product.id}`)),
       catchError(this.handleError<any>('addProduct'))
     );
@@ -71,4 +71,23 @@ export class RestService {
     return this.http.get(endpoint + 'user/show').pipe(
       map(this.extractData));
   }
+
+  getOrder(): Observable<any>{
+    return this.http.get(endpoint + 'order/show').pipe(
+      map(this.extractData));
+  }
+
+  getArtist(): Observable<any>{
+    return this.http.get(endpoint + 'artist/show').pipe(
+      map(this.extractData));
+  }
+
+  addArtist(artist):Observable<any>{
+    return this.http.post<any>(endpoint + 'artist/create', JSON.stringify(artist), httpOptions).pipe(
+      tap((artist)=>console.log(`add artist/ id=${artist.id}`)),
+      catchError(this.handleError<any>('add artist'))
+    );
+  }
+  
+
 }

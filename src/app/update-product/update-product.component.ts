@@ -13,11 +13,14 @@ export class UpdateProductComponent implements OnInit {
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    // this.rest.getProduct(this.route.snapshot.params['id']).subscribe((data: {}) => {
-    //   console.log(data);
-    //   this.ProductData = data;
-    // });
+    this.getProduct();
   }
+getProduct(){
+  this.rest.getProduct(this.route.snapshot.params['id']).subscribe((data: {}) => {
+    console.log(data);
+    this.ProductData = data;
+  });
+}
 
   updateProduct() {
     this.rest.updateProduct(this.route.snapshot.params['id'], this.ProductData).subscribe((result) => {

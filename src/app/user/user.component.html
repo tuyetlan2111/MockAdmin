@@ -12,18 +12,20 @@
                 <th>Country</th>
                 <th>Ngày đăng kí</th>
                 <th>Số lượng Order</th>
+                <th>Vai trò</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let user of UserData">
-                <td>{{user.first_name}}</td>
-                <td>{{user.first_name}}</td>
-                <td>{{user.first_name}}</td>
-                <td>{{user.first_name}}</td>
-                <td>{{user.first_name}}</td>
-                <td>{{user.first_name}}</td>
-                <td>{{user.first_name}}</td>
-                <td>{{user.first_name}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.city}}</td>
+                <td>{{user.country}}</td>
+                <td>{{user.signupDate}}</td>
+                <td>{{user.orderCount}}</td>
+                <td>{{user.role}}</td>
             </tr>
            
         </tbody>
