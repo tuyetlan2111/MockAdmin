@@ -24,8 +24,8 @@
                 <td>{{user.city}}</td>
                 <td>{{user.country}}</td>
                 <td>{{user.signupDate}}</td>
-                <td>{{user.orderCount}}</td>
-                <td>{{user.role}}</td>
+                <td style="text-align:center;">{{user.orderCount}}</td>
+                <td>{{user.role == 1 ? 'admin' : 'Khách'}}</td>
             </tr>
            
         </tbody>

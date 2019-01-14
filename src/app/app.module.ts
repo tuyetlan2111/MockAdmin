@@ -17,6 +17,7 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { LoginSignComponent } from './login-sign/login-sign.component';
 import { ArtistComponent } from './artist/artist.component';
 import { AddArtistComponent } from './add-artist/add-artist.component';
+import { UpdateArtistComponent } from './update-artist/update-artist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { AddArtistComponent } from './add-artist/add-artist.component';
     LoginSignComponent,
     ArtistComponent,
     AddArtistComponent,
+    UpdateArtistComponent,
   ],
   imports: [
     BrowserModule,

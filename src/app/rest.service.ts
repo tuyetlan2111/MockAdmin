@@ -26,7 +26,7 @@ export class RestService {
     return (error: any): Observable<T> => {
   
       // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
+      // console.error(error); // log to console instead
   
       // TODO: better job of transforming error for user consumption
       console.log(`${operation} failed: ${error.message}`);
@@ -48,11 +48,10 @@ export class RestService {
   addProduct (product): Observable<any> {
     console.log(product);
     return this.http.post<any>(endpoint + 'product/ProductData', JSON.stringify(product), httpOptions).pipe(
-      tap((product) => console.log(`added product w/ id=${product.id}`)),
+      tap((product) => console.log(`addProduct w/ id=${product.id}`)),
       catchError(this.handleError<any>('addProduct'))
     );
   }
-  
   updateProduct (id, product): Observable<any> {
     return this.http.put(endpoint + 'product/update/' + id, JSON.stringify(product), httpOptions).pipe(
       tap(_ => console.log(`updated product id=${id}`)),
@@ -61,8 +60,8 @@ export class RestService {
   }
   
   deleteProduct (id): Observable<any> {
-    return this.http.delete<any>(endpoint + 'product/' + id, httpOptions).pipe(
-      tap(_ => console.log(`deleted product id=${id}`)),
+    return this.http.delete<any>(endpoint + 'product/delete/' + id, httpOptions).pipe(
+      tap(_ => console.log(`delete product id=${id}`)),
       catchError(this.handleError<any>('deleteProduct'))
     );
   }
@@ -72,8 +71,12 @@ export class RestService {
       map(this.extractData));
   }
 
-  getOrder(): Observable<any>{
+  getOrders(): Observable<any>{
     return this.http.get(endpoint + 'order/show').pipe(
+      map(this.extractData));
+  }
+  getOrderDetail(id): Observable<any> {
+    return this.http.get(endpoint + 'order_detail/show/' + id, httpOptions).pipe(
       map(this.extractData));
   }
 
@@ -81,13 +84,30 @@ export class RestService {
     return this.http.get(endpoint + 'artist/show').pipe(
       map(this.extractData));
   }
-
-  addArtist(artist):Observable<any>{
-    return this.http.post<any>(endpoint + 'artist/create', JSON.stringify(artist), httpOptions).pipe(
-      tap((artist)=>console.log(`add artist/ id=${artist.id}`)),
-      catchError(this.handleError<any>('add artist'))
+  deleteArtist (id): Observable<any> {
+    return this.http.delete<any>(endpoint + 'artist/delete/' + id, httpOptions).pipe(
+      tap(_ => console.log(`delete aritist id=${id}`)),
+      catchError(this.handleError<any>('deleteArtist'))
     );
   }
-  
+  addArtist (product): Observable<any> {
+    console.log(product);
+    return this.http.post<any>(endpoint + 'artist/create/', JSON.stringify(product), httpOptions).pipe(
+      tap((product) => console.log(`addArtist w/ id=${product.id}`)),
+      catchError(this.handleError<any>('addArtist'))
+    );
+  }
+  // selectedFile: File;
+  // onUpload() {
+  //   const uploadData = new FormData();
+  //   uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
+  //   this.http.post('my-backend.com/file-upload', uploadData, {
+  //     reportProgress: true,
+  //     observe: 'events'
+  //   })
+  //     .subscribe(event => {
+  //       console.log(event); // handle event here
+  //     });
+  // }
 
 }

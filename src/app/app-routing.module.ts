@@ -19,7 +19,7 @@ const routes: Routes = [
    { path: 'add_artist', component: AddArtistComponent },
   { path: 'update_product/:id', component: UpdateProductComponent },
   { path: 'order', component: OrderComponent },
-  { path: 'order_detail', component: OrderDetailComponent },
+  { path: 'order_detail/:id', component: OrderDetailComponent },
   { path: 'artist', component: ArtistComponent },
 
 

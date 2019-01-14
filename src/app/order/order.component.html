@@ -10,24 +10,25 @@
                 <th>Tổng giá</th>
                 <th>Order Number</th>
                 <th>ItemCount</th>
-                <th>Xóa</th>
-                <th>Sửa</th>
+                <!-- <th>Xóa</th>
+                <th>Sửa</th> -->
                 <th>Chi tiết</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let order of OrderData">
-                <td>{{order.user_id}}</td>
-                <td>System Architect</td>
-                <td>61.000</td>
-                <td>61.000</td>
-                <td>System Architect</td>
-                <td>System Architect</td>
-                <td><i class="far fa-trash-alt"></i></td>
-               <td><i class="fas fa-marker"></i></td>
-               <td><a routerLink="/order_detail">Chi tiết</a></td>
+                <td>{{order.id}}</td>
+                <td>
+                    <span>{{order.user.firstName}}</span> <span>{{order.user.lastName}}</span></td>
+                <td>{{order.orderDate}}</td>
+                <td>{{order.totalPrice}}</td>
+                <td>{{order.orderNumber}}</td>
+                <td>{{order.itemCount}}</td>
+                <!-- <td><i class="far fa-trash-alt"></i></td>
+               <td><i class="fas fa-marker"></i></td> -->
+               <td><a routerLink="/order_detail/{{order.id}}">Chi tiết</a></td>
             </tr>
         </tbody>
     </table>
   
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+  

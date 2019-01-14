@@ -1,38 +1,47 @@
 <app-menu></app-menu>
 <div class="col-9 add_product">
-  <h3>Thêm sản phẩm</h3>
+  <!-- <h3>Thêm sản phẩm</h3> -->
+  <form method="POST" action="#">
   <div class="form-group">
-    <label for="name">Tên sản phẩm</label>
-    <input type="text" class="form-control" id="title" placeholder="Nhập sản phẩm" name="title" [(ngModel)]="ProductData.title">
+    <fieldset>
+      <legend>Tên sản phẩm:</legend>
+      <input type="text" class="form-control" id="title" placeholder="Nhập sản phẩm" name="title" [(ngModel)]="ProductData.title">
+    </fieldset>
   </div>
-  <!-- <div class="form-group">
+  <div class="form-group">
     <label for="name">Artist</label>
       <select class="form-control" id="sel1">
-        <option *ngFor="let artist of ProductData">{{artist.price}}</option>
+        <option *ngFor="let artist of artist" (value)="ProductData.artist.country">{{artist.country}}</option>
       </select>
-    </div> -->
+    </div>
   <div class="form-group">
-    <label for="name">Giá sản phẩm</label>
-    <input type="text" class="form-control" id="price" placeholder="Nhập giá sản phẩm" name="price" style="margin-left: 33px;" [(ngModel)]="ProductData.price">
-  </div>
-  
-  <!-- <div class="form-group">
-      <label for="name">Artist</label>
-      <input type="text" class="form-control" id="artist" placeholder="Nhập artist" name="artist" style="margin-left: 93px;" [(ngModel)]="ProductData.artist.country">
-    </div> -->
-
-  <div class="form-group">
-    <label for="name">Mô tả sản phẩm</label>
-  <textarea name="descreption" id="descreption" cols="30" rows="10" style="margin-left: 14px;" [(ngModel)]="ProductData.description"></textarea>
+    <fieldset>
+      <legend>Giá sản phẩm:</legend>
+      <input type="text" class="form-control" id="price" placeholder="Nhập giá sản phẩm" name="price" [(ngModel)]="ProductData.price">
+    </fieldset>
   </div>
   <div class="form-group">
-    <label for="fileupload">Chọn hình sản phẩm</label> 
-    <input type="file" name="fileupload" value="fileupload" id="fileupload">
+    <fieldset>
+      <legend style="width: 14%;">Mô tả sản phẩm: </legend>
+      <textarea name="descreption" id="descreption" cols="150" rows="5" [(ngModel)]="ProductData.description"></textarea>
+    </fieldset>
   </div>
- <a routerLink="/add_product"><button class="add" type="submit" (click)="addProduct()">Thêm</button></a> 
+  <div class="form-group">
+    <fieldset>
+          <legend style="width: 17%;">Chọn hình sản phẩm: </legend>
+          <input type="file" (change)="onFileChanged($event)">
+        <!-- <button (click)="fileInput.click()" style="float: left;background: none;
+        border: 2px solid #000000;
+        color: #000000;
+        font-weight: bold;">Select File</button> -->
+        <button type="button" (click)="onUpload()">Upload!</button>
+    </fieldset>
+  </div>
+  <a routerLink="/add_product">
+    <button class="add" type="submit" (click)="addProduct()">Thêm</button>
+  </a>
+</form>
 </div>
-
-
 <!-- <div class="form-group artist">
     <button for="name" (click)="OpenArtist()">Thêm Artist</button> 
     <div *ngIf="show">

@@ -13,7 +13,7 @@ declare var jQuery: any;
 export class ArtistComponent implements OnInit {
 
 
-  
+
   
   artist:any = [];
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
@@ -30,10 +30,21 @@ export class ArtistComponent implements OnInit {
     this.artist = [];
     this.rest.getArtist().subscribe((data: {}) => {
       this.artist = data;
+      console.log(data);
     });
   }
 
- 
+  delete(id) {
+    this.rest.deleteArtist(id)
+      .subscribe(res => {
+          this.getArtist();
+        }, (err) => {
+          console.log(err);
+        }
+      );
+  }
+
+  
 
 
 }

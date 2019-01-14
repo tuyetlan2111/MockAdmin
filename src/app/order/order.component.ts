@@ -12,22 +12,27 @@ declare var jQuery: any;
 export class OrderComponent implements OnInit {
 
   OrderData:any = [];
+  OrderDetail:any = [];
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
 
   @ViewChild('dataTable') table;
   dataTable: any;
 
   ngOnInit(){
-   this.getOrder();
+   this.getOrders();
      this.dataTable = $(this.table.nativeElement);
     this.dataTable.DataTable();
+    this.rest.getOrderDetail(this.route.snapshot.params['id']).subscribe((data: {}) => {
+      console.log(data);
+      this.OrderDetail = data;
+    });
   }
 
-  getOrder(){
+  getOrders(){
     this.OrderData = [];
-    this.rest.getOrder().subscribe((data: {}) => {
+    this.rest.getOrders().subscribe((data: {}) => {
       this.OrderData = data;
-      console.log(data);
+      // console.log(data);
   });
   }
 

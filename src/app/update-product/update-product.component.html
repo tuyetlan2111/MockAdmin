@@ -5,14 +5,14 @@
       <h3>Sửa sản phẩm</h3>
       <div class="form-group">
         <label for="name">Tên sản phẩm</label>
-        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="ProductData.title" >
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="ProductData.title">
       </div>
-      <!-- <div class="form-group">
+      <div class="form-group">
         <label for="name">Artist</label>
-          <select class="form-control" id="sel1">
-            <option value="{{ProductData.artist.country}}">{{ProductData.artist.country}}</option>
+          <select class="form-control" [(ngModel)]="ProductData.artist.country">
+            <option *ngFor="let artist of artist" value="{{artist.country}}">{{artist.country}}</option>
           </select>
-        </div> -->
+        </div>
       <div class="form-group">
         <label for="name">Giá sản phẩm</label>
         <input type="text" class="form-control" id="price" name="price" [(ngModel)]="ProductData.price" style="margin-left: 33px;">

@@ -1,53 +1,60 @@
 .add_product{
     float: right;
+    padding: 0px;
+    margin-right: 60px;
+    margin-top: 30px;
 }
 .add_product h3{
     margin: 18px 0px 36px;
 }
-.add_product textarea{
-    margin-left: 0px;
-}
-.add_product textarea{
-    margin-bottom: 0px;
-    height: 106px;
-    width: 74%;
-}
-.add_product input{
-    margin-left: 30px;
-    width: 74%;
-    display: inline;
-}
-.add_product select{
-    margin-left: 27px;
-    width: 74%;
-    display: inline;
-}
-.add_product button.add{
-    padding: 10px 27px;
-    margin-bottom: 50px;
-    background: #000000;
-    text-align: center;
-    border: none;
-    margin: auto;
-    display: block;
-    border-radius: 5px;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 18px;
+a{
+    text-decoration: none;
 }
 .add_product button{
     border: none;
     font-size: 18px;
+    margin: auto;
+    display: block;
     background: #000000;
     color: #ffffff;
     border-radius: 3px;
-    padding: 4px 8px;
+    padding: 12px 32px;
 }
 .add_product button:hover,.add_product button:focus{
     background: coral;
     color: #ffffff;
 }
-.artist input{
-    margin-left: 126px !important;
-    margin-bottom: 23px!important;
+// .artist input{
+//     margin-left: 126px !important;
+//     margin-bottom: 23px!important;
+// }
+fieldset{
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+fieldset:hover{
+    border: 2px solid #000000;
+}
+fieldset:focus{
+    border-color: red;
+}
+label{
+    color: #949292;
+    font-size: 18px;
+}
+legend{
+    width: 11%;
+    color: #949292;
+    font-size: 18px;
+    padding-left: 6px;
+}
+input,textarea{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+input:focus,textarea:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
